@@ -44,10 +44,10 @@
 
     [self.growingButton updateConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
-        make.width.equalTo(@(self.buttonSize.width)).priorityLow();
-        make.height.equalTo(@(self.buttonSize.height)).priorityLow();
-        make.width.lessThanOrEqualTo(self);
-        make.height.lessThanOrEqualTo(self);
+        [make.width.equalTo(@(self.buttonSize.width)) priorityLow];
+        [make.height.equalTo(@(self.buttonSize.height)) priorityLow];
+        [make.width.lessThanOrEqualTo(self) priorityHigh];
+        [make.height.lessThanOrEqualTo(self) priorityHigh];
     }];
     
     //according to apple super should be called at end of method
